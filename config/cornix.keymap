@@ -129,7 +129,7 @@
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
 
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
         };
@@ -176,6 +176,15 @@
         };
     };
 
+    macros {
+        pw: pw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "PW";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -190,10 +199,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp TAB           &kp Q         &kp W         &kp E               &kp R                &kp T                        &kp Y      &kp U                &kp I            &kp O         &kp P            &kp GRAVE
-&mt LCTRL ESCAPE  &hm_l LCMD A  &hm_l LALT S  &hm_l LEFT_SHIFT D  &hm_shift_l LCTRL F  &kp G                        &kp H      &hm_shift_r RCTRL J  &hm_r RSHIFT K   &hm_r RALT L  &hm_r RCMD SEMI  &kp SQT
-&kp LEFT_SHIFT    &hm_l LGUI Z  &kp X         &kp C               &kp V                &kp B          &none  &none  &kp N      &kp M                &kp COMMA        &kp DOT       &kp FSLH         &kp BACKSPACE
-&none             &none         &none         &kp LCMD            &lt 1 SPACE          &kp BACKSPACE                &kp ENTER  &mo 2                &lt 4 BACKSPACE  &none         &none            &none
+&kp TAB           &kp Q         &kp W         &kp E                     &kp R          &kp T                        &kp Y      &kp U          &kp I                 &kp O         &kp P            &kp GRAVE
+&mt LCTRL ESCAPE  &hm_l LCMD A  &hm_l LALT S  &hm_shift_l LEFT_SHIFT D  &hm_l LCTRL F  &kp G                        &kp H      &hm_r RCTRL J  &hm_shift_r RSHIFT K  &hm_r RALT L  &hm_r RCMD SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z         &kp X         &kp C                     &kp V          &kp B          &none  &none  &kp N      &kp M          &kp COMMA             &kp DOT       &kp FSLH         &kp BACKSPACE
+&none             &none         &none         &kp LCMD                  &lt 1 SPACE    &kp BACKSPACE                &kp ENTER  &mo 2          &lt 4 BACKSPACE       &none         &none            &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -210,10 +219,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&trans  &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4         &kp N5                  &kp NUMBER_6  &kp N7    &kp N8        &kp N9     &kp N0  &trans
-&trans  &hm_l LCTRL A  &hm_l LALT S  &hm_l LCTRL D  &hm_shift_l LSHFT F  &trans                  &kp LEFT      &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
-&trans  &trans         &trans        &trans         &trans               &trans  &trans  &trans  &trans        &trans    &trans        &trans     &trans  &trans
-&none   &none          &none         &trans         &trans               &trans                  &trans        &trans    &trans        &none      &none   &none
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                  &kp NUMBER_6  &kp N7    &kp N8        &kp N9     &kp N0  &trans
+&trans  &trans        &trans        &trans        &trans        &trans                  &kp LEFT      &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans        &trans    &trans        &trans     &trans  &trans
+&none   &none         &none         &trans        &trans        &trans                  &trans        &trans    &trans        &none      &none   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
