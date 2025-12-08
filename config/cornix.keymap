@@ -48,8 +48,8 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
-            tapping-term-ms = <160>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <140>;
             quick-tap-ms = <200>;                // repeat on tap-into-hold
             require-prior-idle-ms = <125>;
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
@@ -61,8 +61,8 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
-            tapping-term-ms = <160>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <140>;
             quick-tap-ms = <200>;
             require-prior-idle-ms = <125>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
@@ -145,49 +145,14 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        cb_ltm {
-            bindings = <&kp ESC>;
-            key-positions = <2 4>;
-            layers = <0 1>;
-        };
-
-        cb_lm {
-            bindings = <&kp TAB>;
-            key-positions = <14 16>;
-            layers = <0 1>;
-        };
-
-        cb_enter {
-            bindings = <&kp RET>;
-            key-positions = <21 19>;
-            layers = <0 1>;
-        };
-
-        cb_f10 {
-            bindings = <&kp F10>;
-            key-positions = <19 20>;
-        };
-
-        cb_f11 {
-            bindings = <&kp F11>;
-            key-positions = <7 8>;
-        };
-
-        cb_f5 {
-            bindings = <&kp F5>;
-            key-positions = <33 34>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
-        pw: pw {
+        new_macro: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none>;
-            label = "PW";
+            label = "NEW_MACRO";
         };
     };
 
