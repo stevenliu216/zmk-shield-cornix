@@ -3,14 +3,11 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
-#include <dt-bindings/zmk/matrix_transform.h>
 #include "cornix-layouts.dtsi"
 #include "cornix_sensors.dtsi"
 /{
     chosen {
         zmk,kscan = &mock_kscan;
-        zephyr,display = &oled;
     };
     mock_kscan: kscan_1 {
         compatible = "zmk,kscan-mock";
